@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Rolling Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Rolling Game</h1>
+        <div id="dice-container">
+            <img id="dice1" src="{{ url_for('static', path='/Dice/empty.png') }}" alt="Dice 1">
+            <img id="dice2" src="{{ url_for('static', path='/Dice/empty.png') }}" alt="Dice 2">
+        </div>
+        <p id="result"></p>
+        <p id="player-money">Player Money: ${{ player_money }}</p>
+        <p id="bet-amount">Bet Amount: ${{ bet_amount }}</p>
+        <p id="total-profit">Total Profit: {{ total_profit }}</p>
+        <p id="total-plays">Total Plays: {{ total_plays }}</p>
+        <button id="play-btn">Roll Dice</button>
+    </div>
+    <script src="{{ url_for('static', path='/scripts/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Rolling Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="border-outline">
+        <div id="game-container">
+            <div id="info-panel">          
+                <div id="player-money"></div>
+                <div id="bet-amount"></div>
+                <div id="total-profit"></div>
+                <div id="total-plays"></div>
+            </div>
+            <div id="dice-container">
+                <div id="dice1"></div>
+                <div id="dice1-value"> </div>
+            </div>
+            <div id = "dice-container">
+                <div id="dice2"></div>
+                <div id="dice2-value"></div>
+            </div>
+            <div id=""info-panel">
+                <div id="result"></div>
+                <button id="roll-btn">!!! ROLL !!!</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+</html>

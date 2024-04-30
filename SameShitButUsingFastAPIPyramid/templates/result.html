@@ -1,0 +1,21 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles/style.css') }}">
+</head>
+<body>
+    <h2>Game Result</h2>
+    <p>Dice 1: <span id="dice1">{{ dice1 }}</span></p>
+    <p>Dice 2: <span id="dice2">{{ dice2 }}</span></p>
+    <p>Result: <span id="result">{{ result }}</span></p>
+    <p>Player Money: $<span id="player-money">{{ player_money }}</span></p>
+    <p>Bet Amount: ${{ bet_amount }}</p>
+    <button id="roll-again">Roll Again</button>
+
+    <script src="{{ url_for('static', path='scripts/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(16, 16, 16);
+    color: aliceblue;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.border-outline {
+    width: 80%;
+    max-width: 960px;
+    border: 3px solid rgb(16, 16, 16);
+    padding: 20px;
+}
+
+#game-container {
+    width: 480px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: dashed 5px rgb(64, 64, 64);
+    transition: transform 0.3s ease;
+}
+
+#info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+#result {
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+#dice-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#dice1,
+#dice2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#dice1-value,
+#dice2-value {
+    margin-top: 10px;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+#roll-btn {
+    position: absolute;
+    bottom: 400px;
+    right: 240px;
+    background-color: aliceblue;
+    color: rgb(16, 16, 16);
+    border: solid 1px rgb(16, 16, 16);
+    cursor: grab;
+    font-size: 32px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1000; /* Add this line to make sure the button appears above other elements */
+
+}
+
+#roll-btn:hover {
+    background-color: rgb(16, 16, 16);
+    color: aliceblue;
+    border: dotted 1px aliceblue;
+}

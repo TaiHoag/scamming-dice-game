@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Play Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+      }
+      h2 {
+        margin-top: 50px;
+      }
+      #dice-container {
+        margin-top: 20px;
+      }
+      .dice {
+        width: 75px;
+        height: 75px;
+        display: inline-block;
+        margin: 0 10px;
+        transition: transform 0.5s ease;
+      }
+      #roll-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      #roll-button:hover {
+        background-color: #45a049;
+      }
+      #result {
+        margin-top: 20px;
+      }
+      #money {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Roll the Dice</h2>
+    <div id="dice-container">
+      <!-- Dice images will be displayed here -->
+    </div>
+    <button id="roll-button">Roll Dice</button>
+    <p id="result"></p>
+    <p id="money"></p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get references to HTML elements
+        const diceContainer = document.getElementById("dice-container");
+        const rollButton = document.getElementById("roll-button");
+        const resultText = document.getElementById("result");
+        const moneyText = document.getElementById("money");
+
+        // Function to roll the dice
+        function rollDice() {
+          // Send AJAX request to Flask server to roll dice
+          fetch("/roll-dice")
+            .then((response) => response.json())
+            .then((data) => {
+              const dice1 = data.dice1;
+              const dice2 = data.dice2;
+              // Update the UI with the dice roll result
+              resultText.textContent = `Result: ${Math.abs(dice1 - dice2)}`;
+              // Update the dice images
+              diceContainer.innerHTML = "";
+              diceContainer.appendChild(createDiceImage(dice1));
+              diceContainer.appendChild(createDiceImage(dice2));
+            })
+            .catch((error) => console.error("Error:", error));
+        }
+
+        // Function to create a dice image element
+        function createDiceImage(value) {
+          const image = document.createElement("img");
+          image.src = `/static/Dice/${value}.png`;
+          image.className = "dice";
+          return image;
+        }
+
+        // Event listener for the roll button
+        rollButton.addEventListener("click", rollDice);
+
+        // Function to update player's money
+        function updateMoney(money) {
+          moneyText.textContent = `Player Money: $${money}`;
+        }
+
+        // Function to initialize the game
+        function initGame() {
+          // Fetch player's initial money from server
+          fetch("/get-money")
+            .then((response) => response.json())
+            .then((data) => updateMoney(data.money))
+            .catch((error) => console.error("Error:", error));
+        }
+
+        // Initialize the game when the page loads
+        initGame();
+      });
+    </script>
+  </body>
+</html>
