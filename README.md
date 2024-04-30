@@ -18,6 +18,7 @@ It is a "nice" dice game.
 ### ⚠️⚠️⚠️ WARNING: This game may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised. ⚠️⚠️⚠️
 
 ### 🎲 About the game 🎲
+
 This is a small personal project that I do in my free time.
 
 The main purpose to examine a probablity and statistic excercise from my textbook
