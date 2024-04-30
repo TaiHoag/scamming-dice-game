@@ -25,6 +25,7 @@ The main purpose to examine a probablity and statistic excercise from my textboo
 (```Probability and Statistics for Engineers and Scientists 4th Edition - Anthony Hayter```)
 
 #### Explain the problem:
+
 You have 2 dices
 
 Expected value of the difference of 2 dices is 1.94💲
