@@ -1,7 +1,7 @@
 # 🎲 Scamming Dice Game 🎲
 ---Currently transforming to web version---
 
-## 🎲 Desciption 🎲
+## 🎲 Description 🎲
 It is a "nice" dice game.
 
 🍀Testing your luck 🍀
